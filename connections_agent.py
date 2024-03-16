@@ -6,6 +6,7 @@ from gensim.models import KeyedVectors
 from k_means_constrained import KMeansConstrained
 from sklearn.metrics.pairwise import euclidean_distances
 
+# User enters a connections game and also handles invalid inputs
 def user_input():
     valid = False
     user_number = 0
@@ -23,12 +24,14 @@ def user_input():
             print("Invalid input")
     return user_number
 
+# Use a pre-trained Word2Vec embedding model
 def create_word2vec_model():
     print(f"Creating Model")
     word2vec_path = 'GoogleNews-vectors-negative300.bin' # 3 GB file (not included in repo)
     w2v_model = KeyedVectors.load_word2vec_format(word2vec_path, binary=True)
     return w2v_model
 
+# Creates the Connections game for the agent
 def choose_connections_games(game_num=0):
     df = pd.read_csv('connections.csv', names=['word0', 'word1', 'word2', 'word3', 'clue'], keep_default_na=False).iloc[1:]
     df = df[['word0', 'word1', 'word2', 'word3']]
@@ -37,6 +40,7 @@ def choose_connections_games(game_num=0):
     game = words_list[game_num*16:game_num*16+16]
     return game
 
+# Creates the word embeddings from pre-trained word2vec model
 def create_embeddings(w2v_model, game):
     print(f"Creating Embeddings")
     embeddings = []
@@ -52,7 +56,7 @@ def create_embeddings(w2v_model, game):
     
     return np_embeddings
 
-
+# Performs K means constrianed clustering for one game
 def kmeans_clustering(X, game, num_clusters=4):
     kmeans_cluster = KMeansConstrained(n_clusters=num_clusters, size_min=4, size_max=4)
     cluster_labels = kmeans_cluster.fit_predict(X)
@@ -67,6 +71,7 @@ def kmeans_clustering(X, game, num_clusters=4):
 
     return kmeans_cluster, clusters
 
+# Finds the best cluster using the intercluster distances between cluster data points and cluster centers
 def find_best_group(kmeans_cluster):
     cluster_centers = kmeans_cluster.cluster_centers_
     inter_cluster_distances = euclidean_distances(cluster_centers)
@@ -74,6 +79,7 @@ def find_best_group(kmeans_cluster):
     best_cluster_index = avg_inter_cluster_distance.argmin()
     return best_cluster_index
 
+# Checks if the agent choose the correct group
 def evaluate_group(best_group, game):
     for i in range(0, len(game), 4):
         correct_group = game[i:i+4]
@@ -83,6 +89,7 @@ def evaluate_group(best_group, game):
     print("Incorrect Grouping\n")
     return False
 
+# Simulates the agent playing a Connections game
 def playing_connections(connection_game, word_embeddings, play_all = False):
     print("Agent Playing ...\n")
     attempts = 4
@@ -131,6 +138,7 @@ def playing_connections(connection_game, word_embeddings, play_all = False):
 
     return (16-len(connection_game))//4
 
+# Simulates the agent playing all the connections games
 def play_all():
     w2v_model = create_word2vec_model()
     total_games, wins = 0, 0
@@ -146,6 +154,7 @@ def play_all():
     print(f"Total Games Played: {total_games}")
     print(f"Winning Percentage: {wins/total_games}")
 
+# Command line option to one game or all games
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'all':
         play_all()
