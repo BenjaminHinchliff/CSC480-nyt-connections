@@ -40,18 +40,25 @@ Notebooks:
 Results/Visualizations
 - Results in the visualization folder
 - Running the corresponding notebook will create these visualizations of the results
-- Running the agent (in the running code section) will allow you to play the Connections games
 - word2vec.ipynb
     - word2vec-cluster-visualization
     - word2vec-group-accuracies
     - word2vec-silhouette-scores
+- glove.ipynb
+    - glove-cluster-visualization
+    - glove-group-accuracies
+    - glove-silhouette-scores
+- Running the agent (in the running code section) will allow you to play the Connections games
 
 Files Needed:
 - Connections Game Files:
     - connection-archive.txt (Raw text format of all Connections games)
     - connections.csv (CSV format of all Connections games)
 - Pre-trained Embedding Files (Not in GitHub Repo - Too Large)
-    - GoogleNew-vectors-negative300.bin (a pre-trained Google News corpus of 3 billion words)
+    - Word2Vec File
+        - GoogleNew-vectors-negative300.bin (a pre-trained Google News corpus of 3 billion words)
         - Link: https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit?resourcekey=0-wjGZdNAUop6WykTtMip30g
-    - GloVe Files
+    - GloVe File
+        - glove.840B.300d.txt
+        - Link: https://huggingface.co/stanfordnlp/glove/resolve/main/glove.840B.300d.zip
 
