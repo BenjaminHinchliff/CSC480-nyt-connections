@@ -1,6 +1,16 @@
+Team Members: Aarav Sharma, Benjamin Hinchliff, Nathan Ip, Brian Bivinetto
+
 Acknowledgement:
 - Cal Poly CSC 480 Project
 - Professor/Instructor: Rodrigo Canaan
+
+External Sources:
+- K-means Constrained: 
+    - https://joshlk.github.io/k-means-constrained/
+    - https://github.com/joshlk/k-means-constrained
+- Word2Vec
+    - https://radimrehurek.com/gensim/auto_examples/tutorials/run_word2vec.html
+    - https://towardsdatascience.com/introduction-to-word-embedding-and-word2vec-652d0c2060fa
 
 Dependencies:
 - Installation: pip3 install {dependency_name}
@@ -14,9 +24,12 @@ Dependencies:
 
 Running Code:
 - To choose and play one game: python3 connections_agent.py
+    - Agent plays the connections game and either wins or loses
     - Agent usually wins when playing Connections Game #41 
     - Agent usually loses when playing Connections Game #1
 - To play all games: python3 connections_agent.py all
+    - Agent plays all the connections games
+    - Results: Total number of games played and win rate is shown at the end
 
 Notebooks:
 - glove.ipynb
@@ -24,11 +37,21 @@ Notebooks:
 - word2vec.ipynb
     - Uses Word2Vec for word embeddings
 
+Results/Visualizations
+- Results in the visualization folder
+- Running the corresponding notebook will create these visualizations of the results
+- Running the agent (in the running code section) will allow you to play the Connections games
+- word2vec.ipynb
+    - word2vec-cluster-visualization
+    - word2vec-group-accuracies
+    - word2vec-silhouette-scores
+
 Files Needed:
-- Provided Files:
-    - connection-archive.txt
-    - connections.csv
-- Not Provided Files (Too Large)
+- Connections Game Files:
+    - connection-archive.txt (Raw text format of all Connections games)
+    - connections.csv (CSV format of all Connections games)
+- Pre-trained Embedding Files (Not in GitHub Repo - Too Large)
     - GoogleNew-vectors-negative300.bin (a pre-trained Google News corpus of 3 billion words)
+        - Link: https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit?resourcekey=0-wjGZdNAUop6WykTtMip30g
     - GloVe Files
 
