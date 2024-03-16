@@ -92,7 +92,7 @@ def playing_connections(connection_game, word_embeddings, play_all = False):
         print(f"{attempts} Attempts Remaining")
         print(f"Words Remaining: {connection_game}")
         if not play_all:
-            time.sleep(3)
+            time.sleep(4)
 
         kmeans_cluster, clusters = kmeans_clustering(word_embeddings, connection_game, num_clusters=len(connection_game)//4)
         best_group_number = find_best_group(kmeans_cluster)
@@ -125,31 +125,26 @@ def playing_connections(connection_game, word_embeddings, play_all = False):
             winner = True
         
     if winner:
-        print("Agent Wins!")
-        return True
+        print("Agent Wins!\n")
     else:
-        print("Agent Loses")
-        return False
+        print("Agent Loses\n")
+
+    return (16-len(connection_game))//4
 
 def play_all():
     w2v_model = create_word2vec_model()
-    total_games = 0
-    wins = 0
-    losses = 0
+    total_games, wins = 0, 0
     for i in range(228):
         connection_game = choose_connections_games(game_num=i)
         word_embeddings = create_embeddings(w2v_model, connection_game)
-        if playing_connections(connection_game, word_embeddings, play_all=True):
+        groups_correct = playing_connections(connection_game, word_embeddings, play_all=True)
+        if groups_correct == 4:
             wins += 1
-        else:
-            losses += 1
         total_games += 1
 
-    print("\n\n\n\n\n\n\n\n")
+    print("\n\n\n\n\n\n")
     print(f"Total Games Played: {total_games}")
     print(f"Winning Percentage: {wins/total_games}")
-    print(f"Losing Percentage: {losses/total_games}")
-
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'all':
@@ -160,6 +155,6 @@ if __name__ == '__main__':
         print(f"Connections Game {user_number}: {connection_game}")
         w2v_model = create_word2vec_model()
         word_embeddings = create_embeddings(w2v_model, connection_game)
-        playing_connections(connection_game, word_embeddings)
+        print(f"{playing_connections(connection_game, word_embeddings)} Correct Group(s) Found\n")
 
     
