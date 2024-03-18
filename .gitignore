@@ -162,5 +162,5 @@ cython_debug/
 # GLoVE
 glove.*B.*d.txt
 
-# word2vec
-*.bin
+# Word2Vec
+GoogleNews-vectors-negative300.bin
