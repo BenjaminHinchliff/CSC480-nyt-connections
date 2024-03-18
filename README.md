@@ -8,6 +8,9 @@ External Sources:
 - K-means Constrained: 
     - https://joshlk.github.io/k-means-constrained/
     - https://github.com/joshlk/k-means-constrained
+- GLoVE
+    - https://nlp.stanford.edu/projects/glove/
+    - https://github.com/stanfordnlp/GloVe
 - Word2Vec
     - https://radimrehurek.com/gensim/auto_examples/tutorials/run_word2vec.html
     - https://towardsdatascience.com/introduction-to-word-embedding-and-word2vec-652d0c2060fa
@@ -56,9 +59,11 @@ Files Needed:
     - connections.csv (CSV format of all Connections games)
 - Pre-trained Embedding Files (Not in GitHub Repo - Too Large)
     - Word2Vec File
+        - (Impossible to automate)
         - GoogleNew-vectors-negative300.bin (pre-trained Google News corpus containing 3 million 300-dimension English word vectors)
         - Link: https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit?resourcekey=0-wjGZdNAUop6WykTtMip30g
     - GloVe File
+        - ./get-glove.sh
         - glove.840B.300d.txt
         - Link: https://huggingface.co/stanfordnlp/glove/resolve/main/glove.840B.300d.zip
 
