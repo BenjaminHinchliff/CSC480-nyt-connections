@@ -16,8 +16,8 @@ External Sources:
     - https://towardsdatascience.com/introduction-to-word-embedding-and-word2vec-652d0c2060fa
 
 Dependencies:
-- Installation: pip3 install {dependency_name}
-- All Dependencies
+- Installation: `pip3 install -r requirements.txt`
+- Primary Dependencies
     - numpy
     - pandas
     - sklearn
