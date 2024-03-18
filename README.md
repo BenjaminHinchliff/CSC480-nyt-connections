@@ -24,6 +24,7 @@ Dependencies:
     - k_means_constrained
     - gensim
     - matplotlib
+    - jupyter
 
 Running Code:
 - To choose and play one game: python3 connections_agent.py
