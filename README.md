@@ -56,7 +56,7 @@ Files Needed:
     - connections.csv (CSV format of all Connections games)
 - Pre-trained Embedding Files (Not in GitHub Repo - Too Large)
     - Word2Vec File
-        - GoogleNew-vectors-negative300.bin (a pre-trained Google News corpus of 3 billion words)
+        - GoogleNew-vectors-negative300.bin (pre-trained Google News corpus containing 3 million 300-dimension English word vectors)
         - Link: https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit?resourcekey=0-wjGZdNAUop6WykTtMip30g
     - GloVe File
         - glove.840B.300d.txt
