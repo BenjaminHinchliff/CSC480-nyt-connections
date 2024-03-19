@@ -48,10 +48,12 @@ Results/Visualizations
     - word2vec-cluster-visualization
     - word2vec-group-accuracies
     - word2vec-silhouette-scores
+    - word2vec-summary-statistics
 - glove.ipynb
     - glove-cluster-visualization
     - glove-group-accuracies
     - glove-silhouette-scores
+    - glove-summary-statistics
 - Running the agent (in the running code section) will allow you to play the Connections games
 
 Files Needed:
