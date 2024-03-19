@@ -42,18 +42,18 @@ Notebooks:
     - Uses Word2Vec for word embeddings
 
 Results/Visualizations
-- Results in the visualization folder
-- Running the corresponding notebook will create these visualizations of the results
+- Running the corresponding notebook will create these visualizations/reports
+- Images in the visualization folder
 - `word2vec.ipynb`
-    - word2vec-cluster-visualization
-    - word2vec-group-accuracies
-    - word2vec-silhouette-scores
-    - word2vec-summary-statistics
+    - word2vec-cluster-visualization.png
+    - word2vec-group-accuracies.png
+    - word2vec-silhouette-scores.png
+    - Word2Vec Summary Statistics Output
 - `glove.ipynb`
-    - glove-cluster-visualization
-    - glove-group-accuracies
-    - glove-silhouette-scores
-    - glove-summary-statistics
+    - glove-cluster-visualization.png
+    - glove-group-accuracies.png
+    - glove-silhouette-scores.png
+    - GloVe Summary Statistics Output
 - Running the agent (in the running code section) will allow you to play the Connections games
 
 Files Needed:
@@ -62,8 +62,7 @@ Files Needed:
     - `connections.csv` (CSV format of all Connections games)
 - Pre-trained Embedding Files (Not in GitHub Repo - Too Large)
     - Word2Vec File
-        - (Impossible to automate)
-        - `GoogleNew-vectors-negative300.bin` (pre-trained Google News corpus embedding model containing 3 million 300-dimension English word vectors)
+        - `GoogleNews-vectors-negative300.bin` (pre-trained Google News corpus embedding model containing 3 million 300-dimension English word vectors)
         - Link: https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit?resourcekey=0-wjGZdNAUop6WykTtMip30g
     - GloVe File
         - `./get-glove.sh`
