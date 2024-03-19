@@ -53,7 +53,7 @@ Results/Visualizations
     - glove-cluster-visualization
     - glove-group-accuracies
     - glove-silhouette-scores
-    - glove-summary-statistics
+    <!-- - glove-summary-statistics -->
 - Running the agent (in the running code section) will allow you to play the Connections games
 
 Files Needed:
